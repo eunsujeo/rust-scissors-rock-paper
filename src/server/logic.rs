@@ -1,11 +1,12 @@
 use std::io;
 
-fn main() {
-    println!("가위, 바위, 보 !!!!");
+mod player;
+
+pub fn logic(d: &str) {
+    println!(">>> sent {}", d);
+    let person: player::Player = d;
 
     loop {
-        println!("Enter your choice (rock/paper/scissors):");
-
         let mut player_choice = String::new();
         io::stdin().read_line(&mut player_choice).unwrap();
         let player_choice = player_choice.trim();
